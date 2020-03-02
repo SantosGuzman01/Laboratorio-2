@@ -43,8 +43,9 @@ namespace MVCLaboratorio.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Edit(int idVideo)
+        public ActionResult Edit(int idVideo,string titulo, int repro,string url)
         {
+
             return View();
         }
         //Delete
