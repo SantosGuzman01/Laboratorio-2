@@ -7,7 +7,16 @@
     <title>Index</title>
 </head>
 <body>
-    Lista de videos
+    <h1> Lista de videos </h1>
 
+    Hay <%: ((System.Data.DataTable)ViewData["video"]).Rows.Count; %> videos
+    <br />
+    <%
+        foreach (System.Data.DataRow ren in ((System.Data.DataTable)ViewData["video"]).Rows)
+        { %>
+           <p> <%: ren["titulo"].ToString() %>  </p>
+     <%   }
+         
+    %>
 </body>
 </html>
