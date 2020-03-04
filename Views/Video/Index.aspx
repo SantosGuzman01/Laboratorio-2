@@ -9,7 +9,7 @@
 <body>
     <h1> Lista de videos </h1>
 
-    Hay <%: ((System.Data.DataTable)ViewData["video"]).Rows.Count; %> videos
+    Hay <%: ((System.Data.DataTable)ViewData["video"]).Rows.Count %>
     <br />
     <%
         foreach (System.Data.DataRow ren in ((System.Data.DataTable)ViewData["video"]).Rows)

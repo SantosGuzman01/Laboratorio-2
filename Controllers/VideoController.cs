@@ -17,7 +17,7 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
-            ViewData["video"] = BaseHelper.ejecutarConsulta("sp_video_verVideo", CommandType.StoredProcedure);
+            ViewData["video"] = BaseHelper.ejecutarConsulta("sp_video_verVideo2", CommandType.StoredProcedure);
             return View();
         }
         //Create
@@ -47,12 +47,12 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Edit(int idVideo,string titulo, int repro,string url)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("idVideo", idVideo));
             parametros.Add(new SqlParameter("titulo", titulo));
             parametros.Add(new SqlParameter("repro", repro));
             parametros.Add(new SqlParameter("url", url));
+            parametros.Add(new SqlParameter("idVideo", idVideo));
 
-            BaseHelper.ejecutarSentencia("sp_video_editar", CommandType.StoredProcedure, parametros);
+            BaseHelper.ejecutarSentencia("sp_video_editar2", CommandType.StoredProcedure, parametros);
             return RedirectToAction("Index", "Video");
         }
         //Delete
